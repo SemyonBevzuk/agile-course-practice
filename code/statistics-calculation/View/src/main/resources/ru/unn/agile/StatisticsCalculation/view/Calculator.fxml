@@ -9,8 +9,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import ru.unn.agile.StatisticsCalculation.viewmodel.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <fx:define>
+      <ViewModel fx:id="viewModel" />
+   </fx:define>
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -50,7 +54,7 @@
                         <Separator orientation="VERTICAL" prefHeight="200.0" />
                         <Label text="Статус:" />
                         <Separator orientation="VERTICAL" prefHeight="200.0" />
-                        <Label fx:id="lbStatus" text="статус" />
+                        <Label fx:id="lbStatus" text="${viewModel.status}" />
                      </children>
                   </VBox>
                </children>
@@ -62,7 +66,7 @@
                <children>
                   <Label text="Результат:" />
                   <Separator prefWidth="200.0" />
-                  <Label fx:id="lbResult" text="ответ" />
+                  <Label fx:id="lbResult" text="${viewModel.result}" />
                </children>
             </HBox>
          </children>
